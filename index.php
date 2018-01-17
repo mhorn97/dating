@@ -4,6 +4,7 @@
  * User: Michael Horn
  * Date: 1/15/2018
  * Time: 5:51 PM
+ * File to create a view of the home page with the fat-free framework
  */
 
 require_once ('vendor/autoload.php');
