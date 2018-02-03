@@ -4,6 +4,7 @@
  * User: michael horn
  * Date: 2/2/2018
  * Time: 5:01 PM
+ * Page that holds validation functions for the personal page
  */
 
 function validName($name)

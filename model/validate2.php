@@ -4,6 +4,7 @@
  * User: micha
  * Date: 2/2/2018
  * Time: 11:09 PM
+ * Page that holds validation methods for the interest page
  */
 function validOutdoor($outdoor)
 {

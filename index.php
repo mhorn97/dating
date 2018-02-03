@@ -4,7 +4,7 @@
  * User: Michael Horn
  * Date: 1/15/2018
  * Time: 5:51 PM
- * File to create a view of the home page with the fat-free framework
+ * File to create templates for dating website and profile
  */
 
 session_start();
@@ -27,6 +27,7 @@ $f3 -> route('GET /', function() {
 }
 );
 
+//Personal Information Page
 $f3 -> route('GET|POST /personal', function($f3) {
     if(isset($_POST['submit']))
     {
@@ -61,6 +62,7 @@ $f3 -> route('GET|POST /personal', function($f3) {
     echo $template->render('pages/personal.html');
 });
 
+//Profile page
 $f3 -> route('GET|POST /profile', function($f3) {
     if(isset($_POST['submit']))
     {

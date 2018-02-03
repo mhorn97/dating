@@ -1,3 +1,7 @@
+<!--
+Michael Horn
+2/2/2018
+Page that allows the user to enter in personal information-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +37,7 @@
         <div class="form-group">
             <label class="form-control-label" for="age">Age</label>
             <input type="text" class="form-control" name = "age" id="age" value="{{@age}}">
-            <check if="{{ isset(@errors['age']) }}">
                 <p>{{ @errors['age'] }}</p>
-            </check>
         </div>
 
         <div class="form-group">
@@ -49,9 +51,7 @@
         <div class="form-group">
             <label class="form-control-label" for="phone">Phone Number</label>
             <input type = "text" class="form-control" name = "phone" id="phone" value="{{@phone}}">
-            <check if="{{ isset(@errors['phone']) }}">
                 <p>{{ @errors['phone'] }}</p>
-            </check>
         </div>
         </div>
 
