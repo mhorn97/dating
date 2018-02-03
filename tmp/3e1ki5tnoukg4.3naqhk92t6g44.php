@@ -17,26 +17,29 @@
     </nav>
     <div class="container" id="maindiv">
     <h1 id="head">Personal Information</h1>
-    <form method="post" action="./profile">
+    <form method="post" action="personal">
     <div class = "row">
         <div class="col-sm-9">
         <div class="form-group">
             <label for="fname">First Name</label>
-            <input type = "text" class="form-control" name = "fname" id="fname">
+            <input type = "text" class="form-control" name = "fname" id="fname" value="<?= ($fname) ?>">
         </div>
 
         <div class="form-group">
             <label for="lname">Last Name</label>
-            <input type="text" class="form-control" name = "lname" id="lname">
+            <input type="text" class="form-control" name = "lname" id="lname" value="<?= ($lname) ?>">
         </div>
-
+            <p><?= ($errors['name']) ?></p>
         <div class="form-group">
             <label class="form-control-label" for="age">Age</label>
-            <input type="text" class="form-control" name = "age" id="age">
+            <input type="text" class="form-control" name = "age" id="age" value="<?= ($age) ?>">
+            <?php if (isset($errors['age'])): ?>
+                <p><?= ($errors['age']) ?></p>
+            <?php endif; ?>
         </div>
 
         <div class="form-group">
-            <label class="form-control-label" for="genders">Gender</label>
+            <label class="form-control-label">Gender</label>
             <div id = genders>
                 <input type = "radio" name = "gender" value="Male" id="male">Male
                 <input type = "radio" name = "gender" value="Female" id="female">Female
@@ -45,14 +48,17 @@
 
         <div class="form-group">
             <label class="form-control-label" for="phone">Phone Number</label>
-            <input type = "text" class="form-control" name = "phone" id="phone">
+            <input type = "text" class="form-control" name = "phone" id="phone" value="<?= ($phone) ?>">
+            <?php if (isset($errors['phone'])): ?>
+                <p><?= ($errors['phone']) ?></p>
+            <?php endif; ?>
         </div>
         </div>
 
         <hr>
 
         <div class="col-sm-3">
-            <p><strong>Note:</strong> All information entered is protected by our <a href="#">privacy policy</a>. Profile information can only be viewed by others with your permission.</p>
+            <p id="note"><strong>Note:</strong> All information entered is protected by our <a href="#">privacy policy</a>. Profile information can only be viewed by others with your permission.</p>
             <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Next>">
         </div>
     </div>

@@ -17,7 +17,7 @@
     </nav>
     <div class="container" id="maindiv">
         <h1 id="head">Interests</h1>
-            <form method="post" action="./results">
+            <form method="post" action="#">
                 <div class="form-group">
                     <label class="form-control-group">In-door Activities</label>
                     <div class="row">
@@ -48,6 +48,7 @@
                         <input type="checkbox" name="indoor[]" value = "video games">video games
                         </div>
                     </div>
+                    <p><?= ($errors['indoor']) ?></p>
                 </div>
                 <hr>
                 <div class="form-group">
@@ -78,6 +79,7 @@
                         </div>
 
                     </div>
+                    <p><?= ($errors['outdoor']) ?></p>
                 </div>
         </form>
     </div>

@@ -23,7 +23,7 @@ input[type="radio"]
     bottom:10px;
     right:20px;
 }
-p{
+#note{
     border:1px black solid;
     border-radius:10px;
     background-color:lightgray;

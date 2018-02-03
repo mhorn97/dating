@@ -10,7 +10,7 @@
     <title>Profile</title>
 </head>
 <body>
-    <form method="post" action="./interests">
+    <form method="post" action="#">
         <nav class = "navbar bg-light navbar-light">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="home.html">My Dating Website</a>
@@ -22,13 +22,13 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type = "text" class="form-control" name = "email" id="email">
+                        <input type = "text" class="form-control" name = "email" id="email" value="<?= ($email) ?>">
                     </div>
                     <div class="form-group">
                         <label for="state">State</label>
                         <select name = "state" id="state" class="form-control">
                             <option value="Washington">Washington</option>
-                            <option vlaue="Texas">Texas</option>
+                            <option value="Texas">Texas</option>
                             <option value="California">California</option>
                         </select>
                     </div>
@@ -43,7 +43,7 @@
                 <hr>
                 <div class="col-sm-6">
                     <label for="bio">Biography</label>
-                    <textarea class="form-control" rows="4" cols="50" name = "bio" id="bio"></textarea>
+                    <textarea class="form-control" rows="4" cols="50" name = "bio" id="bio" value="<?= ($bio) ?>"></textarea>
                     <input class="btn btn-primary" type = "submit" name = "submit" id="submit" value="next>">
                 </div>
             </div>
