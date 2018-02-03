@@ -40,9 +40,10 @@
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="col-sm-6">
                     <label for="bio">Biography</label>
-                    <textarea rows="4" cols="50" name = "bio" id="bio"></textarea>
+                    <textarea class="form-control" rows="4" cols="50" name = "bio" id="bio"></textarea>
                     <input class="btn btn-primary" type = "submit" name = "submit" id="submit" value="next>">
                 </div>
             </div>

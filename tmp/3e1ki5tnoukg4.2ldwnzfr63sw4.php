@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/results.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -9,25 +10,44 @@
     <title>Summary</title>
 </head>
 <body>
-    <h1>My Dating Website</h1>
-    <div>
-        <p>Name: <?= ($fname) ?> <?= ($lname) ?></p>
-        <p>Gender: <?= ($gender) ?></p>
-        <p>Age: <?= ($age) ?></p>
-        <p>Phone: <?= ($phone) ?></p>
-        <p>Email: <?= ($email) ?></p>
-        <p>State: <?= ($state) ?></p>
-        <p>Seeking: <?= ($seeking) ?></p>
-        <p>Interests:</p>
-        <?php foreach (($indoor?:[]) as $in): ?>
-            <li><?= ($in) ?></li>
-        <?php endforeach; ?>
+    <nav class = "navbar bg-light navbar-light">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="home.html">My Dating Website</a>
+        </div>
+    </nav>
+    <div class="container" id="maindiv">
+        <div class="row">
+            <div class="col-sm-6" id="col1">
+                <p class="paragraph">Name: <?= ($fname) ?> <?= ($lname) ?></p>
+                <p class="paragraph">Gender: <?= ($gender) ?></p>
+                <p class="paragraph">Age: <?= ($age) ?></p>
+                <p class="paragraph">Phone: <?= ($phone) ?></p>
+                <p class="paragraph">Email: <?= ($email) ?></p>
+                <p class="paragraph">State: <?= ($state) ?></p>
+                <p class="paragraph">Seeking: <?= ($seeking) ?></p>
+                <p class="paragraph">Interests:
+                <?php foreach (($indoor?:[]) as $in): ?>
+                    <?= ($in)."
+" ?>
+                <?php endforeach; ?>
 
-        <?php foreach (($outdoor?:[]) as $out): ?>
-            <li><?= ($out) ?></li>
-        <?php endforeach; ?><!--Repeat-->
+                <?php foreach (($outdoor?:[]) as $out): ?>
+                    <?= ($out)."
+" ?>
+                <?php endforeach; ?></p>
+            </div>
+            <hr>
+            <div class="col-sm-6">
+                <img src="./images/profile.png" class = "rounded" alt = "profile-img">
+                <h2>Biography</h2>
+                <p><?= ($bio) ?></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+            <button class="btn btn-primary" name="contact">Contact Me!</button>
+            </div>
+        </div>
     </div>
-    <h2>Biography</h2>
-    <p><?= ($bio) ?></p>
 </body>
 </html>

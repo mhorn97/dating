@@ -49,6 +49,8 @@
         </div>
         </div>
 
+        <hr>
+
         <div class="col-sm-3">
             <p><strong>Note:</strong> All information entered is protected by our <a href="#">privacy policy</a>. Profile information can only be viewed by others with your permission.</p>
             <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Next>">
