@@ -30,8 +30,8 @@ $f3 -> route('GET /', function() {
 $f3 -> route('GET /personal', function($f3) {
     if(isset($_POST['submit']))
     {
-        $_SESSION['fname'] = $_POST['fname'];
-        $lname = $_SESSION['lname'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
         $age = $_POST['age'];
         $gender = $_POST['gender'];
         $phone = $_POST['phone'];
