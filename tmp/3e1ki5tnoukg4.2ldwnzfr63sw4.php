@@ -1,3 +1,7 @@
+<!--
+Michael Horn
+2/2/2018
+Page that shows the user all of the information they have entered in as their profile page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,22 +14,22 @@
     <title>Summary</title>
 </head>
 <body>
-    <nav class = "navbar bg-light navbar-light">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="home.html">My Dating Website</a>
-        </div>
-    </nav>
-    <div class="container" id="maindiv">
-        <div class="row">
-            <div class="col-sm-6" id="col1">
-                <p class="paragraph">Name: <?= ($fname) ?> <?= ($lname) ?></p>
-                <p class="paragraph">Gender: <?= ($gender) ?></p>
-                <p class="paragraph">Age: <?= ($age) ?></p>
-                <p class="paragraph">Phone: <?= ($phone) ?></p>
-                <p class="paragraph">Email: <?= ($email) ?></p>
-                <p class="paragraph">State: <?= ($state) ?></p>
-                <p class="paragraph">Seeking: <?= ($seeking) ?></p>
-                <p class="paragraph">Interests:
+<nav class = "navbar bg-light navbar-light">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="home.html">My Dating Website</a>
+    </div>
+</nav>
+<div class="container" id="maindiv">
+    <div class="row">
+        <div class="col-sm-6" id="col1">
+            <p class="paragraph">Name: <?= ($fname) ?> <?= ($lname) ?></p>
+            <p class="paragraph">Gender: <?= ($gender) ?></p>
+            <p class="paragraph">Age: <?= ($age) ?></p>
+            <p class="paragraph">Phone: <?= ($phone) ?></p>
+            <p class="paragraph">Email: <?= ($email) ?></p>
+            <p class="paragraph">State: <?= ($state) ?></p>
+            <p class="paragraph">Seeking: <?= ($seeking) ?></p>
+            <p class="paragraph">Interests:
                 <?php foreach (($indoor?:[]) as $in): ?>
                     <?= ($in)."
 " ?>
@@ -35,19 +39,19 @@
                     <?= ($out)."
 " ?>
                 <?php endforeach; ?></p>
-            </div>
-            <hr>
-            <div class="col-sm-6">
-                <img src="./images/profile.png" class = "rounded" alt = "profile-img">
-                <h2>Biography</h2>
-                <p><?= ($bio) ?></p>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-sm-7">
-            <button class="btn btn-primary" name="contact">Contact Me!</button>
-            </div>
+        <hr>
+        <div class="col-sm-6">
+            <img src="./images/profile.png" class = "rounded" alt = "profile-img">
+            <h2>Biography</h2>
+            <p><?= ($bio) ?></p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <button class="btn btn-primary" name="contact">Contact Me!</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

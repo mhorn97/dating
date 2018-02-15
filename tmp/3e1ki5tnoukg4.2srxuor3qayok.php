@@ -1,3 +1,7 @@
+<!--
+Michael Horn
+2/2/2018
+Page that allows the user to enter information about themself-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +47,8 @@
                 <hr>
                 <div class="col-sm-6">
                     <label for="bio">Biography</label>
-                    <textarea class="form-control" rows="4" cols="50" name = "bio" id="bio" value="<?= ($bio) ?>"></textarea>
-                    <input class="btn btn-primary" type = "submit" name = "submit" id="submit" value="next>">
+                    <textarea class="form-control" rows="4" cols="50" name = "bio" id="bio"></textarea>
+                    <input class="btn btn-primary" type = "submit" name = "submit" id="submit" value="Next>">
                 </div>
             </div>
         </div>

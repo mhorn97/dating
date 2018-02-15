@@ -1,3 +1,7 @@
+<!--
+Michael Horn
+2/2/2018
+Page that allows the user to enter in a few different interests-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
