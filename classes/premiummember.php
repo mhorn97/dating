@@ -1,9 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: micha
+ * User: Michael Horn
  * Date: 2/15/2018
  * Time: 10:35 AM
+ *
  */
 
 class PremiumMember extends Member

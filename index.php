@@ -54,13 +54,11 @@ $f3 -> route('GET|POST /personal', function($f3) {
             if(!isset($_SESSION['premium']))
             {
                 $member = new Member($fname, $lname, $age, $gender, $phone);
-                $member->setPremium($_SESSION['premium']);
                 $_SESSION['member'] = $member;
             }
             else
             {
                 $member = new PremiumMember($_SESSION['fname'], $_SESSION['lname'], $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
-                $member->setPremium($_SESSION['premium']);
                 $_SESSION['member'] = $member;
             }
             header("Location:profile");
@@ -132,10 +130,12 @@ $f3->route('GET|POST /interests', function($f3) {
         {
             $_SESSION['indoor']=$indoor;
             $_SESSION['outdoor']=$outdoor;
+
             $member = $_SESSION['member'];
             $member->setInDoorActivities($indoor);
             $member->setOutDoorActivities($outdoor);
             $_SESSION['member'] = $member;
+
             header("Location:results");
         }
     }
