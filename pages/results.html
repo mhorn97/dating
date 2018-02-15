@@ -29,6 +29,7 @@ Page that shows the user all of the information they have entered in as their pr
             <p class="paragraph">Email: {{@email}}</p>
             <p class="paragraph">State: {{@state}}</p>
             <p class="paragraph">Seeking: {{@seeking}}</p>
+            <check if="{{@premium}}">
             <p class="paragraph">Interests:
                 <repeat group="{{@indoor}}" value="{{@in}}">
                     {{@in}}
@@ -37,6 +38,7 @@ Page that shows the user all of the information they have entered in as their pr
                 <repeat group="{{@outdoor}}" value="{{@out}}">
                     {{@out}}
                 </repeat></p>
+            </check>
         </div>
         <hr>
         <div class="col-sm-6">

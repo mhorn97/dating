@@ -7,7 +7,6 @@
  * File to create templates for dating website and profile
  */
 
-session_start();
 
 // Turn on error reporting
 ini_set("display_errors", 1);
@@ -15,6 +14,8 @@ error_reporting(E_ALL);
 
 
 require_once ('vendor/autoload.php');
+session_start();
+
 
 $f3 = Base::instance();
 
@@ -37,6 +38,7 @@ $f3 -> route('GET|POST /personal', function($f3) {
         $gender = $_POST['gender'];
         $phone = $_POST['phone'];
         $errors = $_POST['errors'];
+        $premium = $_POST['premium'];
 
         include('model/validate.php');
 
@@ -47,6 +49,20 @@ $f3 -> route('GET|POST /personal', function($f3) {
             $_SESSION['age'] = $age;
             $_SESSION['gender'] = $gender;
             $_SESSION['phone'] = $phone;
+            $_SESSION['premium'] = $premium;
+
+            if(!isset($_SESSION['premium']))
+            {
+                $member = new Member($fname, $lname, $age, $gender, $phone);
+                $member->setPremium($_SESSION['premium']);
+                $_SESSION['member'] = $member;
+            }
+            else
+            {
+                $member = new PremiumMember($_SESSION['fname'], $_SESSION['lname'], $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
+                $member->setPremium($_SESSION['premium']);
+                $_SESSION['member'] = $member;
+            }
             header("Location:profile");
         }
     }
@@ -55,6 +71,7 @@ $f3 -> route('GET|POST /personal', function($f3) {
     $f3->set('age',$age);
     $f3->set('gender',$gender);
     $f3->set('phone',$phone);
+    $f3->set('premium',$premium);
     $f3->set('errors',$errors);
 
 
@@ -81,7 +98,21 @@ $f3 -> route('GET|POST /profile', function($f3) {
         $_SESSION['seeking'] = $_POST['seeking'];
         $_SESSION['bio'] = $_POST['bio'];
 
-        header("Location:interests");
+        $member = $_SESSION['member'];
+        $member->setEmail($_SESSION['email']);
+        $member->setState($_SESSION['state']);
+        $member->setSeeking($_SESSION['seeking']);
+        $member->setBio($_SESSION['bio']);
+        $_SESSION['member'] = $member;
+
+        if(!isset($_SESSION['premium']))
+        {
+            header("Location:results");
+        }
+        else
+        {
+            header("Location:interests");
+        }
     }
 
     $template = new Template();
@@ -101,6 +132,10 @@ $f3->route('GET|POST /interests', function($f3) {
         {
             $_SESSION['indoor']=$indoor;
             $_SESSION['outdoor']=$outdoor;
+            $member = $_SESSION['member'];
+            $member->setInDoorActivities($indoor);
+            $member->setOutDoorActivities($outdoor);
+            $_SESSION['member'] = $member;
             header("Location:results");
         }
     }
@@ -126,6 +161,10 @@ $f3->route('GET|POST /results', function($f3) {
     $f3->set('bio',$_SESSION['bio']);
     $f3->set('indoor',$_SESSION['indoor']);
     $f3->set('outdoor',$_SESSION['outdoor']);
+    $f3->set('premium', $_SESSION['premium']);
+    $f3->set('member', $_SESSION['member']);
+
+    print_r($_SESSION['member']);
     $template = new Template();
     echo $template->render('pages/results.html');
 });

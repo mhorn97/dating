@@ -1,21 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Michael Horn
- * Date: 2/14/2018
- * Time: 3:37 PM
+ * User: micha
+ * Date: 2/15/2018
+ * Time: 10:35 AM
  */
 
 class PremiumMember extends Member
 {
-    private $_inDoorInterests = array();
-    private $_outDoorInterests = array();
-
-    function __construct($inDoorActivities, $outDoorActivities)
-    {
-        $this->_inDoorActivities = $inDoorActivities;
-        $this->_outDoorActivities = $outDoorActivities;
-    }
+    private $_inDoorActivities= array();
+    private $_outDoorActivities = array();
 
     function getIndoorActivities()
     {

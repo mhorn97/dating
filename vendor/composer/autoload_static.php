@@ -34,7 +34,7 @@ class ComposerStaticInit9c0288d69636a84cfdd529759485372d
         'Matrix' => __DIR__ . '/..' . '/bcosca/fatfree-core/matrix.php',
         'Member' => __DIR__ . '/../..' . '/classes/member.php',
         'Prefab' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
-        'PremiumMember' => __DIR__ . '/../..' . '/classes/premium-member.php',
+        'PremiumMember' => __DIR__ . '/../..' . '/classes/premiummember.php',
         'Preview' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
         'Registry' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
         'SMTP' => __DIR__ . '/..' . '/bcosca/fatfree-core/smtp.php',

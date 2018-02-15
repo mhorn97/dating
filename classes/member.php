@@ -18,7 +18,7 @@ class Member
     protected $seeking;
     protected $bio;
 
-    function __construct($fname, $lname, $age, $gender, $phone)
+    public function __construct($fname, $lname, $age, $gender, $phone)
     {
         $this->fname = $fname;
         $this->lname = $lname;
@@ -80,5 +80,59 @@ class Member
     function getPhone()
     {
         return $this->phone;
+    }
+
+    //email
+    function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    function getEmail()
+    {
+        return $this->email;
+    }
+
+    //state
+    function setState($state)
+    {
+        $this->state = $state;
+    }
+
+    function getState()
+    {
+        return $this->state;
+    }
+
+    //seeking
+    function setSeeking($seeking)
+    {
+        $this->seeking = $seeking;
+    }
+
+    function getSeeking()
+    {
+        return $this->seeking;
+    }
+
+    //bio
+    function setBio($bio)
+    {
+        $this->bio = $bio;
+    }
+
+    function getBio()
+    {
+        return $this->bio;
+    }
+
+    function setPremium($premium)
+    {
+        $this->premium = $premium;
+    }
+
+    function getPremium()
+    {
+        return $this->premium;
     }
 }

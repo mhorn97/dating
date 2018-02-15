@@ -24,7 +24,7 @@ function validIndoor($indoor)
 {
     if(!empty($indoor)) {
         foreach ($indoor as $activity) {
-            if ($activity != "tv" && $activity != "movies" && $activity != "cooking" && $activity != "board games" && $activity != "puzzles" && $activity != "reading" && $activity != "cards" && $activity == "video games") {
+            if ($activity != "tv" && $activity != "movies" && $activity != "cooking" && $activity != "board games" && $activity != "puzzles" && $activity != "reading" && $activity != "cards" && $activity != "video games") {
                 return false;
             }
         }

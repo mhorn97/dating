@@ -29,6 +29,7 @@ Page that shows the user all of the information they have entered in as their pr
             <p class="paragraph">Email: <?= ($email) ?></p>
             <p class="paragraph">State: <?= ($state) ?></p>
             <p class="paragraph">Seeking: <?= ($seeking) ?></p>
+            <?php if ($premium): ?>
             <p class="paragraph">Interests:
                 <?php foreach (($indoor?:[]) as $in): ?>
                     <?= ($in)."
@@ -39,6 +40,7 @@ Page that shows the user all of the information they have entered in as their pr
                     <?= ($out)."
 " ?>
                 <?php endforeach; ?></p>
+            <?php endif; ?>
         </div>
         <hr>
         <div class="col-sm-6">

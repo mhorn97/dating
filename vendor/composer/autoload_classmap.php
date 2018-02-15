@@ -33,7 +33,7 @@ return array(
     'Matrix' => $vendorDir . '/bcosca/fatfree-core/matrix.php',
     'Member' => $baseDir . '/classes/member.php',
     'Prefab' => $vendorDir . '/bcosca/fatfree-core/base.php',
-    'PremiumMember' => $baseDir . '/classes/premium-member.php',
+    'PremiumMember' => $baseDir . '/classes/premiummember.php',
     'Preview' => $vendorDir . '/bcosca/fatfree-core/base.php',
     'Registry' => $vendorDir . '/bcosca/fatfree-core/base.php',
     'SMTP' => $vendorDir . '/bcosca/fatfree-core/smtp.php',
