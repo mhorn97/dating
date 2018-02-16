@@ -58,7 +58,8 @@ $f3 -> route('GET|POST /personal', function($f3) {
             }
             else
             {
-                $member = new PremiumMember($_SESSION['fname'], $_SESSION['lname'], $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
+                $member = new PremiumMember($_SESSION['fname'], $_SESSION['lname'],
+                    $_SESSION['age'], $_SESSION['gender'], $_SESSION['phone']);
                 $_SESSION['member'] = $member;
             }
             header("Location:profile");
@@ -164,7 +165,6 @@ $f3->route('GET|POST /results', function($f3) {
     $f3->set('premium', $_SESSION['premium']);
     $f3->set('member', $_SESSION['member']);
 
-    print_r($_SESSION['member']);
     $template = new Template();
     echo $template->render('pages/results.html');
 });

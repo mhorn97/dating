@@ -10,7 +10,9 @@ function validOutdoor($outdoor)
 {
     if(!empty($outdoor)) {
         foreach ($outdoor as $activity) {
-            if ($activity != "hiking" && $activity != "biking" && $activity != "swimming" && $activity != "collecting" && $activity != "walking" && $activity != "climbing") {
+            if ($activity != "hiking" && $activity != "biking" &&
+                $activity != "swimming" && $activity != "collecting" &&
+                $activity != "walking" && $activity != "climbing") {
                 return false;
             }
         }
@@ -24,7 +26,9 @@ function validIndoor($indoor)
 {
     if(!empty($indoor)) {
         foreach ($indoor as $activity) {
-            if ($activity != "tv" && $activity != "movies" && $activity != "cooking" && $activity != "board games" && $activity != "puzzles" && $activity != "reading" && $activity != "cards" && $activity != "video games") {
+            if ($activity != "tv" && $activity != "movies" && $activity != "cooking" &&
+                $activity != "board games" && $activity != "puzzles" && $activity != "reading"
+                && $activity != "cards" && $activity != "video games") {
                 return false;
             }
         }
