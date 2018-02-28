@@ -15,12 +15,16 @@ error_reporting(E_ALL);
 
 require_once ('vendor/autoload.php');
 session_start();
+require_once('model/db-functions.php');
 
 
 $f3 = Base::instance();
 
 //Set debug level
 $f3->set('DEBUG', 3);
+
+//Connect to the database
+$dbh = connect();
 
 $f3 -> route('GET /', function() {
     $template = new Template();
@@ -164,6 +168,9 @@ $f3->route('GET|POST /results', function($f3) {
     $f3->set('outdoor',$_SESSION['outdoor']);
     $f3->set('premium', $_SESSION['premium']);
     $f3->set('member', $_SESSION['member']);
+
+    //Need a method to concact the interest
+    //Need a method to change the premium to a 1 or 0 for true or false
 
     $template = new Template();
     echo $template->render('pages/results.html');
