@@ -4,9 +4,9 @@ Michael Horn
 Stylesheet for the elements of the results page of the dating website
  */
 #head{
-    border-bottom:2px solid lightgray;
-    margin-top:20px;
-}
+     border-bottom:2px solid lightgray;
+     margin-top:20px;
+ }
 #maindiv{
     border-radius:10px;
     border:1px solid lightgray;
