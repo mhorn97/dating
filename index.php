@@ -169,9 +169,42 @@ $f3->route('GET|POST /results', function($f3) {
     $f3->set('premium', $_SESSION['premium']);
     $f3->set('member', $_SESSION['member']);
 
-    //Need a method to concact the interest
-    //Need a method to change the premium to a 1 or 0 for true or false
+    $member = $_SESSION['member'];
 
+    $fname = $member->getFName();
+    $lname = $member->getLName();
+    $age = $member->getAge();
+    $gender = $member->getGender();
+    $phone = $member->getPhone();
+    $email = $member->getEmail();
+    $seeking = $member->getSeeking();
+    $state = $member->getState();
+    $bio = $member->getBio();
+
+    $premium = $_SESSION['premium'];
+
+    //Need a method to change the premium to a 1 or 0 for true or false
+    if($premium)
+    {
+        $premiumNum = 1;
+        $indoor = $_SESSION['indoor'];
+        $outdoor=$_SESSION['outdoor'];
+        //Need a method to concact the interest
+        $interests = implode(", " , $indoor);
+        $interests .= ", ";
+        $interests .= implode(", ", $outdoor);
+    }
+    else
+    {
+        $premiumNum = 0;
+        $interests=null;
+    }
+
+    $success = addMember($fname,$lname,$age,$gender,$phone,$email,$seeking,$state,$bio,$interests,$premiumNum);
+    if($success)
+    {
+        echo "Member added successfully";
+    }
     $template = new Template();
     echo $template->render('pages/results.html');
 });

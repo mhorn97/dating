@@ -86,3 +86,7 @@ function addMember($fname,$lname, $age, $gender, $phone, $email, $seeking, $stat
 
     return $success;
 }
+
+function interestString($interests)
+{
+}
