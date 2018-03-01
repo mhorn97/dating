@@ -209,6 +209,16 @@ $f3->route('GET|POST /results', function($f3) {
     echo $template->render('pages/results.html');
 });
 
+$f3->route('GET|POST /admin', function($f3) {
+    $member = getMembers();
+    print_r($member);
+    $f3->set('members', $member);
+
+
+    $template = new Template();
+    echo $template->render('pages/admin.html');
+});
+
 //Run Fat-Free Framework
 //tests
 $f3->run();

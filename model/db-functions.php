@@ -87,6 +87,18 @@ function addMember($fname,$lname, $age, $gender, $phone, $email, $seeking, $stat
     return $success;
 }
 
-function interestString($interests)
+function getMembers()
 {
+    global $dbh;
+
+    $sql = "SELECT * FROM members ORDER BY lname";
+
+    $statement = $dbh->prepare($sql);
+
+    $statement->execute();
+
+    $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+    return $row;
 }

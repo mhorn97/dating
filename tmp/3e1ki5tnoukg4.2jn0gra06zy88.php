@@ -13,7 +13,8 @@
 </nav>
 <div class="container" id="maindiv">
     <h1 id="head">Membership</h1>
-    {{@member['fname']}}
+    <?= ($member['fname'])."
+" ?>
     <table style="width:85%">
     <tr id="headrow">
         <th>ID</th>
@@ -29,21 +30,21 @@
         <th>Interests</th>
 
     </tr>
-        <repeat group="{{ @members}}" value="{{ @member }}">
+        <?php foreach (($members?:[]) as $member): ?>
         <tr>
-            <td>{{@member['member_id']}}</td>
-            <td>{{@member['fname']}} {{@member['lname']}}</td>
-            <td>{{@member['age']}}</td>
-            <td>{{@member['gender']}}</td>
-            <td>{{@member['phone']}}</td>
-            <td>{{@member['email']}}</td>
-            <td>{{@member['state']}}</td>
-            <td>{{@member['seeking']}}</td>
-            <td>{{@member['bio']}}</td>
-            <td>{{@member['premium']}}</td>
-            <td>{{@member['interests']}}</td>
+            <td><?= ($member['member_id']) ?></td>
+            <td><?= ($member['fname']) ?> <?= ($member['lname']) ?></td>
+            <td><?= ($member['age']) ?></td>
+            <td><?= ($member['gender']) ?></td>
+            <td><?= ($member['phone']) ?></td>
+            <td><?= ($member['email']) ?></td>
+            <td><?= ($member['state']) ?></td>
+            <td><?= ($member['seeking']) ?></td>
+            <td><?= ($member['bio']) ?></td>
+            <td><?= ($member['premium']) ?></td>
+            <td><?= ($member['interests']) ?></td>
         </tr>
-        </repeat>
+        <?php endforeach; ?>
     </table>
 </div>
 </body>

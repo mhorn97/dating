@@ -17,6 +17,7 @@ Page that allows the user to enter in personal information-->
     <nav class = "navbar bg-light navbar-light">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="/328/dating/">My Dating Website</a>
+            <a class="nav-item nav-link" href="admin">Admin</a>
         </div>
     </nav>
     <div class="container" id="maindiv">
