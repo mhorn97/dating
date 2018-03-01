@@ -211,7 +211,6 @@ $f3->route('GET|POST /results', function($f3) {
 
 $f3->route('GET|POST /admin', function($f3) {
     $member = getMembers();
-    print_r($member);
     $f3->set('members', $member);
 
 
