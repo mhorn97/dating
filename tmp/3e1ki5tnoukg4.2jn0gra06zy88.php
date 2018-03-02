@@ -44,7 +44,7 @@
             <td><?= ($member['state']) ?></td>
             <td><?= ($member['seeking']) ?></td>
             <td><?= ($member['bio']) ?></td>
-            <td><input type="checkbox" <?php if ($member['premium'] == 1): ?>checked<?php endif; ?>> disabled</td>
+            <td><input type="checkbox"  disabled <?php if ($member['premium'] == 1): ?>checked<?php endif; ?>></td>
             <td><?= ($member['interests']) ?></td>
         </tr>
         <?php endforeach; ?>

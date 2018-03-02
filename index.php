@@ -15,8 +15,7 @@ error_reporting(E_ALL);
 
 require_once ('vendor/autoload.php');
 session_start();
-require_once('model/db-functions.php');
-
+//require("model/dbfunctions.php");
 
 $f3 = Base::instance();
 
@@ -24,7 +23,8 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //Connect to the database
-$dbh = connect();
+$db = new dbfunctions();
+$dbh = $db->connect();
 
 $f3 -> route('GET /', function() {
     $template = new Template();
@@ -200,17 +200,16 @@ $f3->route('GET|POST /results', function($f3) {
         $interests=null;
     }
 
-    $success = addMember($fname,$lname,$age,$gender,$phone,$email,$seeking,$state,$bio,$interests,$premiumNum);
-    if($success)
-    {
-        echo "Member added successfully";
-    }
+    $db = new dbfunctions();
+    $success = $db->addMember($fname,$lname,$age,$gender,$phone,$email,$seeking,$state,$bio,$interests,$premiumNum);
+
     $template = new Template();
     echo $template->render('pages/results.html');
 });
 
 $f3->route('GET|POST /admin', function($f3) {
-    $member = getMembers();
+    $db = new dbfunctions();
+    $member = $db->getMembers();
     $f3->set('members', $member);
 
 

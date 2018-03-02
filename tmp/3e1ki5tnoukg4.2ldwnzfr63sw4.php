@@ -17,6 +17,7 @@ Page that shows the user all of the information they have entered in as their pr
 <nav class = "navbar bg-light navbar-light">
     <div class="navbar-nav">
         <a class="nav-item nav-link" href="/328/dating/">My Dating Website</a>
+        <a class="nav-item nav-link" href="admin">Admin</a>
     </div>
 </nav>
 <div class="container" id="maindiv">
