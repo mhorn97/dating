@@ -23,7 +23,7 @@ $f3 = Base::instance();
 $f3->set('DEBUG', 3);
 
 //Connect to the database
-$db = new dbfunctions();
+$db = new DBfunctions();
 $dbh = $db->connect();
 
 $f3 -> route('GET /', function() {
@@ -200,7 +200,7 @@ $f3->route('GET|POST /results', function($f3) {
         $interests=null;
     }
 
-    $db = new dbfunctions();
+    $db = new DBfunctions();
     $success = $db->addMember($fname,$lname,$age,$gender,$phone,$email,$seeking,$state,$bio,$interests,$premiumNum);
 
     $template = new Template();
@@ -208,7 +208,7 @@ $f3->route('GET|POST /results', function($f3) {
 });
 
 $f3->route('GET|POST /admin', function($f3) {
-    $db = new dbfunctions();
+    $db = new DBfunctions();
     $member = $db->getMembers();
     $f3->set('members', $member);
 

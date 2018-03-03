@@ -82,12 +82,21 @@ class Member
     //AGE
 
     /**
+     * METHOD WITH VALIDATION
      * Sets the age of the user
+     * if the age in param is less than 0, then it defaults to 0
      * @param $age age of user
      */
     function setAge($age)
     {
-        $this->age = $age;
+        if($age < 0 || !is_numeric($age))
+        {
+            $this->age = 0;
+        }
+        else
+        {
+            $this->age = $age;
+        }
     }
 
     /**
@@ -140,11 +149,21 @@ class Member
 
     /**
      * Sets the email of the user
+     *
+     * VALIDATION METHOD
+     * if email is empty -> default to "No email"
      * @param $email email of user
      */
     function setEmail($email)
     {
-        $this->email = $email;
+        if (empty($email))
+        {
+            $this->email = "No email";
+        }
+        else
+        {
+            $this->email = $email;
+        }
     }
 
     /**
@@ -159,11 +178,19 @@ class Member
 
     /**
      * Sets the state location of user
+     * VALIDATION METHOD
+     * if state is empty--> value = "Not specified"
      * @param $state state of user
      */
     function setState($state)
     {
-        $this->state = $state;
+        if(empty($state))
+        {
+            $this->state = "Not specified";
+        }
+        else {
+            $this->state = $state;
+        }
     }
 
     /**
@@ -178,11 +205,19 @@ class Member
 
     /**
      * Returns what gender the user is seeking
+     * VALIDATION METHOD
+     * if empty, seeking someone
      * @param $seeking gender user is seeking
      */
     function setSeeking($seeking)
     {
-        $this->seeking = $seeking;
+        if(empty($seeking))
+        {
+            $this->seeking = "Someone";
+        }
+        else {
+            $this->seeking = $seeking;
+        }
     }
 
     /**
@@ -197,14 +232,23 @@ class Member
 
     /**
      * Sets the biography of the user
+     *  VALIDATION METHOD
+     *if the bio is empty, set it to "I am an interesting person"
      * @param $bio biography of user
      */
     function setBio($bio)
     {
-        $this->bio = $bio;
+        if(empty($bio))
+        {
+            $this->bio = "I am an interesting person!";
+        }
+        else {
+            $this->bio = $bio;
+        }
     }
 
     /**
+     *
      * @return biography of user
      */
     function getBio()

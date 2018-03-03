@@ -26,7 +26,7 @@
 
 require("/home/mhorngre/config.php");
 
-class dbfunctions
+class DBfunctions
 {
 
     function connect()
@@ -42,23 +42,6 @@ class dbfunctions
             return;
         }
     }
-
-    /*
-     *
-    'fname',$
-    'lname',$
-    'age',$_S
-    'gender',
-    'phone',$
-    'email',$
-    'seeking'
-    'state',$
-    'bio',$_S
-    'indoor',
-    'outdoor'
-    'premium'
-    'member',
-     */
 
     function addMember($fname, $lname, $age, $gender, $phone, $email, $seeking, $state, $bio, $interests, $premium)
     {

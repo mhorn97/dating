@@ -32,6 +32,7 @@ Page that allows the user to enter information about themself-->
                     <div class="form-group">
                         <label for="state">State</label>
                         <select name = "state" id="state" class="form-control">
+                            <option value=""><--Select--></option>
                             <option value="Washington">Washington</option>
                             <option value="Texas">Texas</option>
                             <option value="California">California</option>
